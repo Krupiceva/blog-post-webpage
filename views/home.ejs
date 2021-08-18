@@ -1,5 +1,4 @@
 <!--Homepage -->
-
 <%- include("partials/header") -%>
 
 <h1>Home</h1>
@@ -7,7 +6,9 @@
 
 <% posts.forEach(function(post){ %>
   <h1> <%=post.title%> </h1>
-  <p> <%=post.body%> </p>
+  <% let truncatedBody = post.body.substring(0, 99) + "..."; %>
+  <% let urlPathToPost = "posts/" + post.title; %>
+  <p> <%=truncatedBody%> <a href="<%=urlPathToPost%>">Read More</a></p>
 <% }); %>
 
 <%- include("partials/footer") -%>
