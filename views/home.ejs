@@ -7,7 +7,7 @@
 <% posts.forEach(function(post){ %>
   <h1> <%=post.title%> </h1>
   <% let truncatedBody = post.body.substring(0, 99) + "..."; %>
-  <% let urlPathToPost = "posts/" + post.title; %>
+  <% let urlPathToPost = "posts/" + post._id; %>
   <p> <%=truncatedBody%> <a href="<%=urlPathToPost%>">Read More</a></p>
 <% }); %>
 
